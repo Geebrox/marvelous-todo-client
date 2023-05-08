@@ -1,0 +1,4 @@
+# configs
+.eslint*
+# docker compose persistence
+.data
