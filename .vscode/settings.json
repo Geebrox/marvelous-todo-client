@@ -3,5 +3,9 @@
   "editor.formatOnSave": true,
   "editor.quickSuggestions": { "strings": true },
   "eslint.rules.customizations": [{ "rule": "*", "severity": "warn" }],
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "tailwindCSS.experimental.classRegex": [
+    ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+  ],
+  "cSpell.words": ["clsx"]
 }
