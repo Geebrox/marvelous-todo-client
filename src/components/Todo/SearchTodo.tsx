@@ -1,11 +1,12 @@
-import useInputValue from '@hooks/useInputValue';
+import { todoSearchValueAtom } from '@stores/todo.store';
 import { SearchIcon } from '@ui/Icons';
 import { InputField } from '@ui/Input';
 import clsx from 'clsx';
+import { useAtom } from 'jotai';
 import { type FC } from 'react';
 
 const SearchTodo: FC = () => {
-  const [searchValue, onSearchValueChange] = useInputValue();
+  const [todoSearchValue, setTodoSearchValue] = useAtom(todoSearchValueAtom);
 
   return (
     <InputField
@@ -13,8 +14,8 @@ const SearchTodo: FC = () => {
       labelHidden
       placeholder="Search"
       icon={<SearchIcon />}
-      value={searchValue}
-      onChange={onSearchValueChange}
+      value={todoSearchValue}
+      onChange={(event) => setTodoSearchValue(event.currentTarget.value)}
     />
   );
 };

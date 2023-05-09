@@ -6,8 +6,8 @@ import { randomMinMax } from '@utils/number.utils';
 import { type FC } from 'react';
 
 export interface TodoItemProps extends Todo {
-  onStatusChange: (isFinished: boolean) => void;
-  onDelete: () => void;
+  onStatusChange: (id: string, isFinished: boolean) => void;
+  onDelete: (id: string) => void;
 }
 
 const TodoItem: FC<TodoItemProps> = (props) => {
@@ -18,7 +18,7 @@ const TodoItem: FC<TodoItemProps> = (props) => {
       <Checkbox
         id={id}
         checked={isFinished}
-        onChange={(event) => onStatusChange(!!event.currentTarget.checked)}
+        onChange={(event) => onStatusChange(id, !!event.currentTarget.checked)}
       >
         {title}
       </Checkbox>
@@ -26,7 +26,7 @@ const TodoItem: FC<TodoItemProps> = (props) => {
         variant="ghost"
         colorSchema="danger"
         icon={<TrashIcon />}
-        onClick={onDelete}
+        onClick={() => onDelete(id)}
       />
     </div>
   );

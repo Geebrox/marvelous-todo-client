@@ -15,12 +15,12 @@ const CheckboxInput: FC<CheckboxInputProps> = (props) => {
   return (
     <input
       className={clsx(
-        'h-4 w-4 cursor-pointer rounded border-accent-2 transition-colors',
+        'h-4 w-4 cursor-pointer rounded border-accent-2 transition-colors focus:ring-0',
         {
-          default: 'text-black focus:ring-black',
-          success: 'text-green-700 focus:ring-green-700',
-          warning: 'text-orange-400 focus:ring-orange-400',
-          danger: 'text-red-700 focus:ring-red-700',
+          default: 'text-black',
+          success: 'text-green-700',
+          warning: 'text-orange-400',
+          danger: 'text-red-700',
         }[colorSchema],
         className
       )}

@@ -58,7 +58,7 @@ export const Toast: FC<ToastProps> = (props) => {
           </div>
           <div className="ml-3 w-0 flex-1 pt-0.5">
             <p className="text-sm font-medium text-accent-7">{title}</p>
-            <p className="mt-1 text-sm text-accent-4">{content}</p>
+            <div className="mt-1 text-sm text-accent-4">{content}</div>
           </div>
           <div className="ml-4 flex flex-shrink-0">
             <button
